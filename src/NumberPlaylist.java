@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlaylist {
     public static void main(String[] args) {
@@ -51,5 +52,8 @@ public class NumberPlaylist {
             toDoubleFunction.apply(n);
         });
 
+        //Method 7 to print even numbers
+        Predicate<Integer> predicate = n -> n>0 && n%2==0;
+        list.forEach(n -> System.out.println("Value of: "+ n + " check even "+ predicate.test(n)));
     }
 }
